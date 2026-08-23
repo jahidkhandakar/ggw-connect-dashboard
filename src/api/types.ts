@@ -122,6 +122,21 @@ export interface FlightStanding {
   }[];
 }
 
+// ── Private clubs + member slots ─────────────────────────────────────────
+export interface CreatorClub {
+  _id: string;
+  name?: string;
+  isPrivate?: boolean;
+}
+
+export interface MemberSlot {
+  _id: string;
+  displayName: string;
+  accessCode: string;
+  redeemed: boolean;
+  createdAt?: string;
+}
+
 export const DEFAULT_PARS = [
   4, 4, 3, 5, 4, 4, 3, 4, 5, 4, 3, 4, 5, 4, 4, 3, 4, 5,
 ];

@@ -8,7 +8,7 @@ import { CreateTournament } from "./pages/CreateTournament";
 import { TeeSheetBuilder } from "./pages/TeeSheetBuilder";
 import { SimBoard } from "./pages/SimBoard";
 import { Flights } from "./pages/Flights";
-import { ComingSoon } from "./pages/ComingSoon";
+import { MemberSlots } from "./pages/MemberSlots";
 
 export function App() {
   return (
@@ -27,10 +27,7 @@ export function App() {
         <Route path="tee-sheet" element={<TeeSheetBuilder />} />
         <Route path="sim-board" element={<SimBoard />} />
         <Route path="flights" element={<Flights />} />
-        <Route
-          path="members"
-          element={<ComingSoon title="Private Club Members" />}
-        />
+        <Route path="members" element={<MemberSlots />} />
       </Route>
     </Routes>
   );
