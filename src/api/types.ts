@@ -88,6 +88,40 @@ export const personId = (p: SimPerson): string =>
 export const personName = (p: SimPerson): string =>
   typeof p === "string" ? p : (p.name ?? "Player");
 
+// ── Indoor leagues + flights ─────────────────────────────────────────────
+export interface LeagueMember {
+  _id: string;
+  player: SimPerson;
+  indoorHandicap?: number | null;
+  roundsPlayed: number;
+  flight?: number | null;
+  flightOrder?: number | null;
+  points?: number;
+}
+
+export interface IndoorLeague {
+  _id: string;
+  name: string;
+  facilityName: string;
+  totalRounds: number;
+}
+
+export interface LeagueDetail {
+  league: IndoorLeague;
+  capacity: number;
+  entryOpen: boolean;
+  members: LeagueMember[];
+}
+
+export interface FlightStanding {
+  flight: number;
+  standings: {
+    player: SimPerson;
+    indoorHandicap?: number | null;
+    points: number;
+  }[];
+}
+
 export const DEFAULT_PARS = [
   4, 4, 3, 5, 4, 4, 3, 4, 5, 4, 3, 4, 5, 4, 4, 3, 4, 5,
 ];
