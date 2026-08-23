@@ -39,6 +39,30 @@ export interface Tournament {
   status?: string;
 }
 
+// ── Tee sheet ──────────────────────────────────────────────────────────────
+export interface TeePlayer {
+  user: { _id: string; name?: string; email?: string; image?: string } | string;
+  handicap?: number;
+}
+
+export interface TeeGroup {
+  _id: string;
+  groupName: string;
+  groupIndex?: number;
+  teeDate?: string;
+  teeTime?: string;
+  players: TeePlayer[];
+  filled: number;
+  remaining: number;
+  isFull: boolean;
+}
+
+export const playerId = (p: TeePlayer): string =>
+  typeof p.user === "string" ? p.user : p.user._id;
+
+export const playerName = (p: TeePlayer): string =>
+  typeof p.user === "string" ? p.user : (p.user.name ?? p.user.email ?? "Player");
+
 export const DEFAULT_PARS = [
   4, 4, 3, 5, 4, 4, 3, 4, 5, 4, 3, 4, 5, 4, 4, 3, 4, 5,
 ];
