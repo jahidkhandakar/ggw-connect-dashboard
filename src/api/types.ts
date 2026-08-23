@@ -63,6 +63,31 @@ export const playerId = (p: TeePlayer): string =>
 export const playerName = (p: TeePlayer): string =>
   typeof p.user === "string" ? p.user : (p.user.name ?? p.user.email ?? "Player");
 
+// ── Indoor sim sessions ──────────────────────────────────────────────────
+export type SimPerson = { _id: string; name?: string; image?: string } | string;
+
+export interface SimBay {
+  bayIndex: number;
+  players: SimPerson[];
+}
+
+export interface SimSession {
+  _id: string;
+  title: string;
+  isSocialRound: boolean;
+  sims: number;
+  hoursPerSim: number;
+  allowExtraPerSim: boolean;
+  roster: SimPerson[];
+  bays: SimBay[];
+}
+
+export const personId = (p: SimPerson): string =>
+  typeof p === "string" ? p : p._id;
+
+export const personName = (p: SimPerson): string =>
+  typeof p === "string" ? p : (p.name ?? "Player");
+
 export const DEFAULT_PARS = [
   4, 4, 3, 5, 4, 4, 3, 4, 5, 4, 3, 4, 5, 4, 4, 3, 4, 5,
 ];

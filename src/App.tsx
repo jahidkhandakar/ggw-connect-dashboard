@@ -6,6 +6,7 @@ import { DashboardHome } from "./pages/DashboardHome";
 import { Tournaments } from "./pages/Tournaments";
 import { CreateTournament } from "./pages/CreateTournament";
 import { TeeSheetBuilder } from "./pages/TeeSheetBuilder";
+import { SimBoard } from "./pages/SimBoard";
 import { ComingSoon } from "./pages/ComingSoon";
 
 export function App() {
@@ -23,7 +24,7 @@ export function App() {
         <Route path="tournaments" element={<Tournaments />} />
         <Route path="tournaments/new" element={<CreateTournament />} />
         <Route path="tee-sheet" element={<TeeSheetBuilder />} />
-        <Route path="sim-board" element={<ComingSoon title="Sim Board" />} />
+        <Route path="sim-board" element={<SimBoard />} />
         <Route path="flights" element={<ComingSoon title="Flight Management" />} />
         <Route
           path="members"
