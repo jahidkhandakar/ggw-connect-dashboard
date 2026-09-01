@@ -3,10 +3,10 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "GGW Connect creator + admin dashboard (spec §14/§16). Separate from the Academy panel.",
+  "description": "GGW Connect creator + admin dashboard (spec \u00a714/\u00a716). Separate from the Academy panel.",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "node init && vite",
+    "build": "node init && tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint ."
   },
